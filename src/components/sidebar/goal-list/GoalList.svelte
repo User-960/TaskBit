@@ -2,16 +2,14 @@
 	import { cn } from '$lib/utils.js'
 	import { activeGoal, goalsState } from '@/store'
 	import { calcTotalProgress } from '@/utils'
-	import { CirclePlus } from '@lucide/svelte'
+	import CreateGoal from './CreateGoal/CreateGoal.svelte'
 	import GoalProgress from './GoalProgress/GoalProgress.svelte'
 </script>
 
 <div>
 	<div class="mb-2 flex items-center justify-between px-layout">
 		<span>Goals</span>
-		<button class="opacity-50 transition-opacity hover:opacity-100">
-			<CirclePlus size={20} />
-		</button>
+		<CreateGoal />
 	</div>
 
 	<ul class="mx-2">
@@ -19,7 +17,7 @@
 			<li>
 				<button
 					class={cn(
-						'mb-3 flex w-full items-center justify-between rounded-lg px-3 py-2 transition-colors',
+						'mb-2 flex w-full items-center justify-between rounded-lg px-3 py-2 transition-colors',
 						activeGoal.goal?.id === goal.id ? 'bg-[#222222]' : 'hover:bg-[#222222]'
 					)}
 					onclick={() => {
