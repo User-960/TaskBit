@@ -1,10 +1,12 @@
 <script lang="ts">
+	import MainPage from './components/main-page/MainPage.svelte'
+	import Sidebar from './components/sidebar/Sidebar.svelte'
+
 </script>
 
-<main>
-  <h1>Hello</h1>
+<main class="flex h-screen">
+  <div class="w-8/12 m-auto grid grid-cols-[1fr_2fr] bg-[#181818] shadow rounded-2xl">
+    <Sidebar/>
+    <MainPage/>
+  </div>
 </main>
-
-<style>
-
-</style>

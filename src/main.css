@@ -5,5 +5,5 @@ html {
 }
 
 body {
-	@apply bg-[#181818] text-white;
+	@apply bg-black text-white;
 }
