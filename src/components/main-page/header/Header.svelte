@@ -26,8 +26,8 @@
 	</div>
 
 	<div class="flex items-center gap-3">
-		<IconCircle Icon={Users} />
-		<IconCircle Icon={Plus} />
-		<IconCircle Icon={Ellipsis} />
+		<IconCircle Icon={Users} className="" />
+		<IconCircle Icon={Plus} className="" />
+		<IconCircle Icon={Ellipsis} className="" />
 	</div>
 </header>
