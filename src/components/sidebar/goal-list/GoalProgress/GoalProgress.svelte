@@ -1,10 +1,20 @@
 <script lang="ts">
 	import ProgressPie from '@/components/ui/ProgressPie/ProgressPie.svelte'
+	import { cn } from '@/lib/utils'
 
-	let { progress = 0 }: { progress?: number } = $props()
+	interface Props {
+		progress?: number
+		isAlternative?: boolean
+	}
+
+	let { progress = 0, isAlternative = false }: Props = $props()
 </script>
 
-<span class="flex items-center gap-2">
-	<span class="text-[0.85rem] text-[#777777]">{progress}%</span>
-	<ProgressPie {progress} />
+<span class={cn('flex items-center gap-2', isAlternative ? 'flex-row-reverse' : '')}>
+	<span class={cn('text-sm', isAlternative ? 'text-white' : 'text-[#777777]')}>{progress}%</span>
+	<ProgressPie
+		emptyColor={isAlternative ? '#222222' : undefined}
+		filledColor={isAlternative ? '#ffffff' : undefined}
+		{progress}
+	/>
 </span>

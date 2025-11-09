@@ -1,6 +1,8 @@
 import type { IGoal, ITask } from '@/types'
 
-export function calcTotalProgress(goal: IGoal): number {
+export function calcTotalProgress(goal: IGoal | null): number {
+	if (!goal) return 0
+
 	const totalTasks = goal.tasks.length
 	if (totalTasks === 0) return 0
 
