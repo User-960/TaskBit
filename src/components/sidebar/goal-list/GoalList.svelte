@@ -1,6 +1,8 @@
 <script lang="ts">
-	import ProgressPie from '@/components/ui/ProgressPie/ProgressPie.svelte'
+	import { goalsState } from '@/store/store.svelte'
+	import { calcTotalProgress } from '@/utils'
 	import { CirclePlus } from '@lucide/svelte'
+	import GoalProgress from './GoalProgress/GoalProgress.svelte'
 
 	let progress = $state(75)
 </script>
@@ -14,17 +16,16 @@
 	</div>
 
 	<ul class="mx-3">
-		<li>
-			<button class="mb-3 flex w-full items-center justify-between rounded-lg p-2 px-1">
-				<span class="flex items-center gap-2">
-					<img src="/images/wall-1-mini.jpg" alt="image" width="50" height="50" />
-					<span>Create Growth</span>
-				</span>
-				<span class="flex items-center gap-1.5">
-					<span class="text-[#777777]">75%</span>
-					<ProgressPie {progress} />
-				</span>
-			</button>
-		</li>
+		{#each goalsState.value as goal}
+			<li>
+				<button class="mb-3 flex w-full items-center justify-between rounded-lg p-2 px-1">
+					<span class="flex items-center gap-3">
+						<img src={goal.image} alt={goal.title} class="h-11 w-9 rounded-lg object-cover" />
+						<span class="text-lg">{goal.title}</span>
+					</span>
+					<GoalProgress progress={calcTotalProgress(goal)} />
+				</button>
+			</li>
+		{/each}
 	</ul>
 </div>
