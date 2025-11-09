@@ -1,8 +1,8 @@
 @import 'tailwindcss';
 
 @theme {
-  --color-border: #252525;
-  --spacing-layout: 1rem;
+	--color-border: #252525;
+	--spacing-layout: 1rem;
 }
 
 html {
@@ -14,5 +14,9 @@ body {
 }
 
 button {
-  @apply cursor-pointer;
+	@apply cursor-pointer;
+}
+
+input {
+	@apply font-light;
 }
