@@ -1,18 +1,15 @@
 <script lang="ts">
-  import { PanelRightOpen } from '@lucide/svelte'
+	import { PanelRightOpen } from '@lucide/svelte'
 </script>
 
-<header class="flex items-center justify-between p-4">
-  <div class="flex items-center gap-2">
-    
-    <img src="/avatar.png" alt="avatar" class="rounded-full w-10 h-10" />
-    <span>Jessy Barret</span>
-    
-    <PanelRightOpen />
-  </div>
+<header class="flex items-center justify-between border-b border-border p-layout">
+	<div class="flex items-center gap-2">
+		<img src="/avatar.png" alt="avatar" class="h-8 w-8 rounded-full" />
+		<span>Jessy Barret</span>
+
+		<button class="opacity-60 transition-opacity hover:opacity-100"><PanelRightOpen /></button>
+	</div>
 </header>
 
 <style>
-
 </style>
-

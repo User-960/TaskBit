@@ -1,8 +1,11 @@
 <script lang="ts">
-  import SidebarHeader from './sidebar-header/SidebarHeader.svelte'
-  
+	import SidebarCalendar from './calendar/SidebarCalendar.svelte'
+	import GoalList from './goal-list/GoalList.svelte'
+	import SidebarHeader from './sidebar-header/SidebarHeader.svelte'
 </script>
 
-<aside>
-  <SidebarHeader/>
+<aside class="border-r border-border">
+	<SidebarHeader />
+	<SidebarCalendar />
+	<GoalList />
 </aside>

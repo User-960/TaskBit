@@ -1,9 +1,18 @@
 @import 'tailwindcss';
 
+@theme {
+  --color-border: #252525;
+  --spacing-layout: 1rem;
+}
+
 html {
 	font-size: 18px;
 }
 
 body {
 	@apply bg-black text-white;
+}
+
+button {
+  @apply cursor-pointer;
 }
