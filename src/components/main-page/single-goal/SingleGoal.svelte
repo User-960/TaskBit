@@ -4,6 +4,7 @@
 	import { calcTotalProgress } from '@/utils'
 	import { Flame } from '@lucide/svelte'
 	import IconCircle from '../header/IconCircle.svelte'
+	import TaskItem from './TaskItem/TaskItem.svelte'
 </script>
 
 <div class="mx-auto w-10/12 py-layout">
@@ -21,5 +22,11 @@
 			<div>{activeGoal.goal?.tasks.length} Steps</div>
 			<IconCircle Icon={Flame} className="opacity-100" />
 		</div>
+	</div>
+
+	<div class="mt-5">
+		{#each activeGoal.goal?.tasks as task}
+			<TaskItem {task} />
+		{/each}
 	</div>
 </div>
